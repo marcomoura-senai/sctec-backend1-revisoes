@@ -1,0 +1,25 @@
+{
+  "name": "aula_revisao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:aula1": "tsx ./aula1/carro.ts",
+    "start:prod:aula1": "node ./dist/aula1/carro.js",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-senai.com:marcomoura-senai/aula_revisao.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "tsx": "^4.22.3",
+    "typescript": "^6.0.3"
+  }
+}

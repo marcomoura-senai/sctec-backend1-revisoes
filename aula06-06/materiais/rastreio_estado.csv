@@ -1,0 +1,15 @@
+ words,contador,word
+undefined,unefined,undefined
+"[ser, ou, não, ser, eis, a, questão]",undefeind,undefined
+"[ser, ou, não, ser, eis, a, questão]",{},undefined
+"[ser, ou, não, ser, eis, a, questão]",{},ser
+"[ser, ou, não, ser, eis, a, questão]",{},ser
+"[ser, ou, não, ser, eis, a, questão]",{ser: 1},ser
+"[ser, ou, não, ser, eis, a, questão]",{ser: 1},ou
+"[ser, ou, não, ser, eis, a, questão]","{ser: 1, ou: 1}",ou
+"[ser, ou, não, ser, eis, a, questão]","{ser: 1, ou: 1, não: 1}",não
+"[ser, ou, não, ser, eis, a, questão]","{ser: 2, ou: 1, não: 1}",ser
+"[ser, ou, não, ser, eis, a, questão]","{ser: 2, ou: 1, não: 1}",eis
+"[ser, ou, não, ser, eis, a, questão]",,
+"[ser, ou, não, ser, eis, a, questão]","{ser: 2, ou:1, não: 1, eis:1, a: 1, questão: 1}",
+,,
