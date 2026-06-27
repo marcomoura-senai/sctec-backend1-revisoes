@@ -1,0 +1,100 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+
+// Biblioteca
+
+// Entidades? 
+
+// Livros -> ano, titulo, n páginas, Genero(s), Editora(s)
+// Autor -> nome, idade
+// Editora -> cnpj, razão social, Livro(s)
+// Genero
+// Empréstimo/aluguel/Reserva
+// Pessoa/Usuário
+// Funcionário
+
+// O que é atributo? Coluna/propriedade da entidade(dado)
+// O que é Atômico? Indivisível -> 
+// É aquilo que se eu particionar, 
+// perde a representação original do atributo
+
+// Normalização
+// 3 Formas Normais
+// 1- Uma relação está na 1FN se todos os atributos são atômicos
+// 2 e 3- Todo atributo precisa depender somente da chave primária
+
+// A biblioteca só possui uma cópia de cada livro
+// Usuário pode alugar vários livros
+// Usuário pode ver o histórico de livros que já alugou
+
+Table autor {
+  id integer [primary key]
+  nome varchar // Varying character
+  cpf char[11]
+  sobrenome varchar
+  data_nascimento Date
+}
+
+table livro {
+  id integer [primary key]
+  autor_id integer [not null]
+  titulo varchar
+  ano_publicacao Date
+  codigo_ISBN varchar
+}
+
+table editora {
+  id integer [primary key]
+  cnpj char[14]
+  razao_social varchar
+  nome_fantasia varchar
+}
+
+table livro_editora {
+  id_livro integer [not null]
+  id_editora integert [not null]
+}
+
+table genero_livro {
+  id_livro integer [not null]
+  genero varchar
+}
+
+table autor_livro {
+  id_autor integer [not null]
+  id_livro integer [not null]
+}
+
+table usuario {
+  id integer [not null]
+  cpf char[11]
+  nome varchar [not null]
+  sobrenome varchar
+  login varchar [not null]
+  password varchar [not null]
+}
+
+table aluguel_usuario {
+  id_usuario integer [not null]
+  id_livro integer [not null]
+  data_emprestimo timestamp [not null, default: `CURRENT_TIMESTAMP`]
+  status enum // 'ativo' | 'devolvido'
+  data_devolucao timestamp [null]
+}
+ 
+
+Ref: genero_livro.id_livro > livro.id
+
+Ref: livro_editora.id_editora > editora.id
+Ref: livro_editora.id_livro > livro.id
+
+Ref: autor_livro.id_autor > autor.id 
+Ref: autor_livro.id_livro > livro.id 
+
+Ref: aluguel_usuario.id_usuario > usuario.id
+
+
+
+
+Ref: "livro"."id" < "aluguel_usuario"."id_livro"
