@@ -1,0 +1,9 @@
+- Como modelar?
+  - Como guardar o dado?
+  - Quantas tabelas?
+  - Quais relações?
+- Onde usar o que?
+  - O que você precisa fazer?
+    - Filtro: Where | having | on 
+    - Junção de informação: Join | union | FROM
+    - Agregação de informação:  group by
