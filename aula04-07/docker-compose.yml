@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres:18-alpine
+    container_name: revisao04-07-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: revisao04-07
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./src/database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
